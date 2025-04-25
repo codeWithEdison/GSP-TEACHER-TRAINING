@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "660800357150",
+    "project_id": "fire-auth-10cbb",
+    "storage_bucket": "fire-auth-10cbb.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:660800357150:android:bc6b21e386d28c0581ff0f",
+        "android_client_info": {
+          "package_name": "com.example.fire_auth"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMKcQSehh9MoHYtnXtnm9Cu0Mxyq0zYmY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

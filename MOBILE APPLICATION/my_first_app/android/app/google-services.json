@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "598889042143",
+    "project_id": "gsp-authapp",
+    "storage_bucket": "gsp-authapp.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:598889042143:android:5230d0a7a45327a823196a",
+        "android_client_info": {
+          "package_name": "com.example.auth_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBh-EQeAWvACVuUT26ekSBL4zTirylGI7E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
