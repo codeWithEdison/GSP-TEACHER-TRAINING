@@ -1,39 +1,28 @@
 #!/bin/bash
 
-# List of directories (quotes handle spaces in names)
-folders=(
-  "caresphere-dapp"
-  "HOBBY KERNEL"
-  "student_backend"
-  "caresphere-frontend"
-  "MOBILE APPLICATION"
-  "student-frontend"
-)
-
-# Step 1: Add .git to .gitignore in each folder
-for dir in "${folders[@]}"; do
-  if [ -d "$dir" ]; then
-    echo "Adding .git to .gitignore in: $dir"
-    echo ".git" >> "$dir/.gitignore"
-  else
-    echo "Directory not found: $dir"
-  fi
+# Step 1: Find and delete all nested .git folders (excluding root)
+echo "🔍 Searching for nested .git folders..."
+find . -mindepth 2 -type d -name ".git" | while read -r gitdir; do
+  echo "🗑️  Deleting nested .git directory: $gitdir"
+  rm -rf "$gitdir"
 done
 
-# Step 2: Initialize a global Git repository
-echo "Initializing root Git repository..."
-git init
+# Step 2: Initialize a new Git repo at the root if it doesn't exist
+if [ ! -d .git ]; then
+  echo "🚀 Initializing new Git repo at root..."
+  git init
+fi
 
-# Step 3: Create a .gitignore in root to ignore sub-repos if needed
-echo ".git" > .gitignore
-
-# Step 4: Add and commit everything
+# Step 3: Add everything and commit
+echo "📦 Staging files..."
 git add .
-git commit -m "Initial commit: Added all sub-projects"
+git commit -m "Clean root repo with all nested .git folders removed"
 
-# Step 5: Set remote and push
-git remote add origin https://github.com/codeWithEdison/GSP-TEACHER-TRAINING.git
-git branch -M main
-git push -u origin main
+# Step 4: Set remote and push
+# git remote remove origin 2>/dev/null
+# git remote add origin https://github.com/your-username/your-remote-repo.git
+# git branch -M main
+# git push -f -u origin main
+git push 
 
-echo "✅ All projects pushed to a single GitHub repository."
+echo "✅ All clean and pushed to single GitHub repo."
